@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="2.css">
+
+</head>
+
+<body>
+
+    <div align="center" class="fond">
+
+        <div id="myfond_gris" opendiv=""></div>
+
+        <div align="center" style="padding-top:35px;">
+
+            <div style="background-color:#00a096;" iddiv="box_1" class="mymagicoverbox">
+                Нажми на меня !
+            </div>
+
+            <div style="background-color:#cb2025;" iddiv="box_2" class="mymagicoverbox">
+                И на меня тоже...
+            </div>
+
+        </div>
+
+        <div id="box_1" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">
+            Заглавие первого модального окна!
+            <div class="mymagicoverbox_fenetreinterieur" style="height:150px; ">
+
+                <div align="center">
+                    <br>Ты действительно любишь васаби?
+                    <br><br>
+
+                    <div style="width:100px" align="center" class="mymagicoverbox_fermer">НЕТ</div>
+
+                </div>
+            </div>
+        </div>
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+
+        <div id="box_2" class="mymagicoverbox_fenetre" style="left:-225px; width:450px;">
+            Заглавие второго модального окна!
+            <div class="mymagicoverbox_fenetreinterieur" style="height:150px; ">
+                <div align="center">
+                    <br>Небо синее?
+                    <br><br>
+                    <div style="width:100px" align="center" class="mymagicoverbox_fermer">ДА</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-top:35px;" align="center">
+            <div style=" color:#ffffff; font-weight:300; font-size:30px; font-family:'Roboto';padding-top:20px;">
+                <font style="font-weight:400;">Wordpress-club.com</font>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery(".mymagicoverbox").click(function() {
+                jQuery('#myfond_gris').fadeIn(300);
+                var iddiv = jQuery(this).attr("iddiv");
+                jQuery('#' + iddiv).fadeIn(300);
+                jQuery('#myfond_gris').attr('opendiv', iddiv);
+                return false;
+            });
+            jQuery('#myfond_gris, .mymagicoverbox_fermer').click(function() {
+                var iddiv = jQuery("#myfond_gris").attr('opendiv');
+                jQuery('#myfond_gris').fadeOut(300);
+                jQuery('#' + iddiv).fadeOut(300);
+            });
+        });
+    </script>
+</body>
+
+</html>
